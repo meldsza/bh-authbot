@@ -14,7 +14,7 @@ run `npm install`
 - Add the bot to your guild using oauth
 ### Installing the token
 You can install the token into the bot in the following ways
-- Adding it in the settings.json
+- Adding it in the settings.json. 
 just add a line in the settings.json
 `"token":"TOKEN HERE"`
 - Supply it in the environment variable
