@@ -3,7 +3,7 @@ const settings = require('./settings.json');
 const verify = require('./verify');
 const reject = require('./reject');
 const request = require('request-promise-native');
-app.get('/verify', function (req, res) {
+app.get('/verify', async function (req, res) {
     const applink = 'https://discordapp.com/oauth2/authorize?response_type=code&client_id=' + settings.clientID + '&scope=identify';
     const token_url = 'https://discordapp.com/api/oauth2/token';
     const code = req.query.code;
