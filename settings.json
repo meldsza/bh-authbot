@@ -1,5 +1,7 @@
 {
-    "clientID": "303233587963232256>", //client id from the apps page
+    "clientID": "303233587963232256", //client id from the apps page
+    //bot token from apps page. uncomment to use from this file
+    //"token":"",
     "discord-testers": "197038439483310086", //discord testers guild id
     "bugHunterGaming": "302180260424974336", // the bug hunter gaming guild id
     //client secret from the apps page. uncomment this line to use it from this file
