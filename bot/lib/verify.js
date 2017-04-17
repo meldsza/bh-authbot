@@ -1,5 +1,5 @@
-const bot = require('./bot.js');
-const settigns = require('./settings')
+const bot = require('./../bot.js');
+const settings = require('./../../settings.json')
 module.exports = (m) => {
     m.addRole(m.guild.roles.find("name", "Bug-Hunter"));
     if (settings.announcement && settings.announcement != "")
