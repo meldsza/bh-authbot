@@ -5,7 +5,7 @@ const verify = require('./../lib/verify');
 const reject = require('./../lib/reject');
 const settings = require('./../../settings.json');
 bot.on('guildMemberAdd', (m) => {
-    if (m.guild.id != settings.bughunterGaming) return;
+    //if (m.guild.id != settings.bughunterGaming) return;
     console.log(settings['discord-testers']);
     console.log( userbot.guilds.get(settings['discord-testers']).name);
     let mem = userbot.guilds.get(settings['discord-testers']).member(bot.users.get(m.user.id));
