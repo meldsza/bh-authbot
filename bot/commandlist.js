@@ -10,5 +10,6 @@ module.exports = {
     "remove": "remove",
     "unlock": "unlock",
     "kick": "kick",
-    "ban": "ban"
+    "ban": "ban",
+    "exec":"exec"
 }
