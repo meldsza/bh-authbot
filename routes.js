@@ -11,7 +11,7 @@ app.get('/verify', function (req, res) {
         res.redirect(applink);//redirect to oauth if the code isnt present
     const form = {
         'client_id': settings.clientID,
-        'client_secret': settings.client_secret,
+        'client_secret': settings.client_secret || process.env.client_secret,
         'code': code,
         'grant_type': 'authorization_code',
     };

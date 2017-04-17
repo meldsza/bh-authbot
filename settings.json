@@ -1,7 +1,8 @@
 {
-    "clientID": "", //client id from the apps page
+    "clientID": "303233587963232256>", //client id from the apps page
     "discord-testers": "197038439483310086", //discord testers guild id
     "bugHunterGaming": "302180260424974336", // the bug hunter gaming guild id
-    "client_secret": "", //client secret from the apps page
+    //client secret from the apps page. uncomment this line to use it from this file
+    //"client_secret": "", 
     "announcement": "302189151325782017" //channel to announce verifications
 }
