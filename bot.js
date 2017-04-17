@@ -3,7 +3,7 @@ const settings = require('./settings.json');
 
 const client = new Discord.Client();
 
-var dt = settings.token || process.argv[2];
+var dt = process.env.token || settings.token || process.argv[2];
 
 if (!dt) {
     console.log('required token in settings.json or argument');

@@ -1,6 +1,5 @@
 {
     "clientID": "", //client id from the apps page
-    "token": "", //token for the bot user
     "discord-testers": "197038439483310086", //discord testers guild id
     "bugHunterGaming": "302180260424974336", // the bug hunter gaming guild id
     "client_secret": "", //client secret from the apps page
