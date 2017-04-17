@@ -8,5 +8,7 @@ module.exports = {
     "stats": "stats",
     "add": "add",
     "remove": "remove",
-    "unlock": "unlock"
+    "unlock": "unlock",
+    "kick": "kick",
+    "ban": "ban"
 }
