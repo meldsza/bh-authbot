@@ -1,0 +1,8 @@
+{
+    "clientID": "", //client id from the apps page
+    "token": "", //token for the bot user
+    "discord-testers": "", //discord testers guild id
+    "bugHunterGaming": "", // the bug hunter gaming guild id
+    "client_secret": "", //client secret from the apps page
+    "announcement": "" //channel to announce verifications
+}
