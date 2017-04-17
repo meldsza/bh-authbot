@@ -35,3 +35,10 @@ bot.on('message', (message) => {
 });
 bot.on('lock', () => { lock = true; });
 bot.on('unlock', () => { lock = false; });
+
+process.on('unhandledRejection',(err)=>{
+    console.log("UNHANDLED REJECTION AT "+err.stack);
+    if(err.toString().includes('Request to use token, but token was unavailable to the client'))
+        process.exit();//restart
+});
+process.on('uncaughtException',(err)=>console.log("UNHANDLED EXCEPTION AT "+err.stack));
