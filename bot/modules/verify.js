@@ -1,5 +1,4 @@
-const discord_testers = "197038439483310086";
-const bughunterGaming = "302180260424974336";
+
 const userbot = require('./userbot');
 const bot = require('./../bot');
 const verify = require('./../lib/verify');
