@@ -10,7 +10,7 @@ bot.on('guildMemberAdd', (m) => {
     console.log( userbot.guilds.get(settings['discord-testers']).name);
     let mem = userbot.guilds.get(settings['discord-testers']).member(bot.users.get(m.user.id));
     if (mem && mem.roles.find('name', 'Bug Hunter')) {
-        console.log(m.author.username + ' is a bug hunter');
+        console.log(m.user.username + ' is a bug hunter');
         verify(m);
     }
     else
