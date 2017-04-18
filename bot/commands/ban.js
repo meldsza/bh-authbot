@@ -5,12 +5,12 @@
  * @param {*message} message
  */
 async function command(params, message) {
-    if (!message.member.hasPermission("BAN_MEMBERS")) {
+    if (!message.member.hasPermission("MANAGE_MESSAGES")) {
         await message.channel.sendMessage("You do not have permission to use this command.");
         return;
     }
     await message.guild.member(message.mentions.users.first()).kick();
-    return await message.channel.sendMessage(message.mentions.users.first().toString() + " has been banned by " + message.author.toString() + " for " + params.join(' '));
+    return await message.channel.sendMessage(message.mentions.users.first().toString() + " has been banned by " + message.author.toString() + " for **(**`" + params.slice(1).join(' ') + "`**)**");
 }
 /**
  * description of the command
