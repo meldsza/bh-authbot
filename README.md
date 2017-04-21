@@ -25,3 +25,4 @@ Just do
 if you are supplying the token as argument run
 `node index TOKEN_HERE`
 #### For more information, refer [https://github.com/meldsza/melbot.js/blob/master/README.md](https://github.com/meldsza/melbot.js/blob/master/README.md)
+
