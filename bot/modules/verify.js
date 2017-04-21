@@ -16,5 +16,5 @@ bot.on('guildMemberUpdate', (om,m) => {
         verify(m);
     }
     else
-        reject(m.user);
+        reject(m);
 });
