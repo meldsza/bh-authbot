@@ -2,3 +2,5 @@ language: node_js
 node_js:
   - "7.8"
 
+notifications:
+  webhooks: https://canary.discordapp.com/api/webhooks/304871835743289346/2tF_jtQNcKCnliX0kl9farQ2E-jW_2e_nU-pQV_xewjFKD7ypZBTSUxhpuE0vLl1xzM-/github
