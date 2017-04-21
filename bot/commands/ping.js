@@ -6,7 +6,7 @@
  */
 const bot = require('./../bot');
 async function command(params, message) {
-    message.reply('pong in '+bot.ping);
+    message.reply('pong in '+bot.ping+" ms");
 }
 /**
  * description of the command
