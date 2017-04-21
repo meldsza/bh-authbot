@@ -1,4 +1,6 @@
-# Bug Hunter Verification Project
+# Bug Hunter Verification Project  
+[![Build Status](https://travis-ci.com/meldsza/bh-authbot.svg?token=NCSPyosqnKLmRkQxpv8x&branch=master)](https://travis-ci.com/meldsza/bh-authbot)
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/meldsza/bh-authbot/tree/master)  
 ## Installation
 ### prerequisite
 - Node 7.x
