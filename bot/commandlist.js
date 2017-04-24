@@ -6,10 +6,11 @@ module.exports = {
     "hello": "hello",
     "lock": "lock",
     "stats": "stats",
+    "request": "request",
     "add": "add",
     "remove": "remove",
     "unlock": "unlock",
     "kick": "kick",
     "ban": "ban",
-    "exec":"exec"
+    "exec": "exec"
 }
