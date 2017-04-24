@@ -15,7 +15,7 @@ bot.on('message', (message) => {
     /**
      * if locked, reject everything except dm
      */
-    Message.create({
+    new Message({
         author: message.author.id,
         messageID: message.id,
         channel: message.channel.id,
@@ -42,18 +42,14 @@ bot.on('message', (message) => {
 });
 bot.on('lock', () => { lock = true; });
 bot.on('unlock', () => { lock = false; });
-bot.on('messageDelete', (message) => {
-    Message.create({
-        author: message.author.id,
-        messageID: message.id,
-        channel: message.channel.id,
-        text: message.content,
-        deleted: true
-    }).save();
+bot.on('messageDelete', async function (message) {
+    const m = await Message.where('messageID', message.id).fetchAll();
+    //console.log(m)
+    m.last().save({ deleted: true }, { patch: true });
 
 });
 bot.on('messageUpdate', (oldMessage, message) => {
-    Message.create({
+    new Message({
         author: message.author.id,
         messageID: message.id,
         channel: message.channel.id,

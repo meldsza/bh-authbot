@@ -1,12 +1,16 @@
 // Update with your config settings.
 
 module.exports = {
-  client: "mysql",
+  client: "mssql",
   connection: {
-    host: "127.0.0.1",
-    user: "root",
-    password: "your_database_password",
-    database: "discord"
+    host: "bhverifier.database.windows.net",
+    user: "melroy",
+    password: "RandomPassword@123",
+    database: "discord",
+    options: {
+      port: 1433,
+      encrypt: true
+    }
   },
   migrations: {
     tableName: 'knex_migrations'
