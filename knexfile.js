@@ -3,9 +3,9 @@
 module.exports = {
   client: "mssql",
   connection: {
-    host: "bhverifier.database.windows.net",
+    host: process.env.DB_HOST,
     user: "melroy",
-    password: "RandomPassword@123",
+    password: process.env.DB_PASS,
     database: "discord",
     options: {
       port: 1433,
