@@ -5,7 +5,7 @@
 ### prerequisite
 - Node 7.x
 ### Clone Repo
-run `git clone git@github.com:gerd2002/bh-authbot.git`
+run `git clone git@github.com:meldsza/bh-authbot.git`
 ### Install dependencies
 run `npm install`
 ### Getting the bot token
