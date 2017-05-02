@@ -11,7 +11,7 @@ bot.on('guildMemberUpdate', (om, m) => {
     console.log(settings['discord-testers']);
     console.log(userbot.guilds.get(settings['discord-testers']).name);
     let mem = userbot.guilds.get(settings['discord-testers']).member(bot.users.get(m.user.id));
-    if (mem && mem.roles.find('name', 'Bug Hunter')) {
+    if (mem && mem.roles.get('197042209038663680')) {
         console.log(m.user.username + ' is a bug hunter');
         verify(m);
     }
@@ -31,4 +31,4 @@ userbot.on('guildBanRemove', (guild, user) => {
     { bot.guilds.get(settings['bugHunterGaming']).unban(user); }
 });
 
-
+userbot.on('ready',()=>console.log("Selfbot ready"));
