@@ -19,16 +19,18 @@ bot.on('guildMemberUpdate', (om, m) => {
         reject(m);
 });
 userbot.on('guildBanAdd', (guild, user) => {
-    let mem = null;
+    let g = null;
     if (guild.id === settings['discord-testers'])
-    { mem = bot.guilds.get(settings['bugHunterGaming']).member(user); }
-    if (mem)
-        mem.ban();
+    { g = bot.guilds.get(settings['bugHunterGaming']); }
+    if (g)
+        g.channels.get("302182924642549771").sendMessage("!ban "+user.toString()+" -r Banned on Discord-Testers. Will be unbanned when unbanned on the D-Testers server");
 })
 userbot.on('guildBanRemove', (guild, user) => {
-    let mem = null;
+    let g = null;
     if (guild.id === settings['discord-testers'])
-    { bot.guilds.get(settings['bugHunterGaming']).unban(user); }
+    { g = bot.guilds.get(settings['bugHunterGaming']); }
+    if (g)
+        g.channels.get("302182924642549771").sendMessage("!unban "+user.toString()+" -r unbanned on Discord-Testers.");
 });
 
 userbot.on('ready',()=>console.log("Selfbot ready"));
