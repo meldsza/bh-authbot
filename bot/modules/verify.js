@@ -3,6 +3,7 @@ const userbot = require('./userbot');
 const bot = require('./../bot');
 const verify = require('./../lib/verify');
 const reject = require('./../lib/reject');
+const Discord = require('discord.js');
 const settings = require('./../../settings.json');
 bot.on('guildMemberUpdate', (om, m) => {
     //if (m.guild.id != settings.bughunterGaming) return;
@@ -19,18 +20,26 @@ bot.on('guildMemberUpdate', (om, m) => {
         reject(m);
 });
 userbot.on('guildBanAdd', (guild, user) => {
-    let g = null;
+    let mem = null;
     if (guild.id === settings['discord-testers'])
-    { g = bot.guilds.get(settings['bugHunterGaming']); }
-    if (g)
-        g.channels.get("302182924642549771").sendMessage("!ban "+user.toString()+" -r Banned on Discord-Testers. Will be unbanned when unbanned on the D-Testers server");
+    { mem = bot.guilds.get(settings['bugHunterGaming']).member(user); }
+    if (mem)
+    {
+        const embed = new Discord.RichEmbed();
+        embed.setTitle("USER BANNED");
+        embed.setAuthor(bot.user.username,bot.user.avatarURL);
+        embed.setDescription("**"+user.username+"#"+user.discriminator+"** was banned.\n Reason: "+"Was banned on Discord-Testers. Will be unbanned when unbanned on Discord-Testers");
+        mem.ban().then(()=>bot.channels.get(settings['logs']).sendEmbed(embed));
+    }
 })
 userbot.on('guildBanRemove', (guild, user) => {
-    let g = null;
+    
+    const embed = new Discord.RichEmbed();
+    embed.setTitle("USER UNBANNED");
+    embed.setAuthor(bot.user.username,bot.user.avatarURL);
+    embed.setDescription("**"+user.username+"#"+user.discriminator+"** was unbanned.\n Reason: "+"Was unbanned on Discord-Testers.");
     if (guild.id === settings['discord-testers'])
-    { g = bot.guilds.get(settings['bugHunterGaming']); }
-    if (g)
-        g.channels.get("302182924642549771").sendMessage("!unban "+user.toString()+" -r unbanned on Discord-Testers.");
+    { bot.guilds.get(settings['bugHunterGaming']).unban(user).then(()=>bot.channels.get(settings['logs']).sendEmbed(embed)); }
 });
 
 userbot.on('ready',()=>console.log("Selfbot ready"));
