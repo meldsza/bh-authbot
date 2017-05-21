@@ -8,7 +8,7 @@ async function command(params, message) {
   if (!settings.owners.includes(message.author.id)) {
         return await message.reply('Not worthy')
   }
-  code = message.content.trim().substring(5).trim();
+  code = params.join(" ").trim();
 	const time = process.hrtime();
 	try {
 		var evaled = eval(code);
