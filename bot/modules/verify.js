@@ -29,7 +29,7 @@ userbot.on('guildBanAdd', (guild, user) => {
         embed.setTitle("USER BANNED");
         embed.setAuthor(bot.user.username,bot.user.avatarURL);
         embed.setDescription("**"+user.username+"#"+user.discriminator+"** was banned.\n Reason: "+"Was banned on Discord-Testers. Will be unbanned when unbanned on Discord-Testers");
-        mem.ban().then(()=>bot.channels.get(settings['logs']).sendEmbed(embed));
+        mem.ban({reason:"Was banned on Discord-Testers. Will be unbanned when unbanned on Discord-Testers"}).then(()=>bot.channels.get(settings['logs']).sendEmbed(embed));
     }
 })
 userbot.on('guildBanRemove', (guild, user) => {
