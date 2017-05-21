@@ -8,19 +8,19 @@ async function command(params, message) {
   if (!settings.owners.includes(message.author.id)) {
         return await message.reply('Not worthy')
   }
-  code = msg.content.trim().substring(5).trim();
+  code = message.content.trim().substring(5).trim();
 	const time = process.hrtime();
 	try {
 		var evaled = eval(code);
 		if (typeof evaled !== 'string')
 			evaled = require('util').inspect(evaled);
-		msg.channel.send("**Input**\n```JS\n" + code + "```\n**OUTPUT**\n```xl\n" +
+		await message.channel.send("**Input**\n```JS\n" + code + "```\n**OUTPUT**\n```xl\n" +
 			clean(evaled).replace(bot.token,"YOUCANTSEEMYTOKENFORAREASON") +
 			"\n```\n**Execution Time**: " + (process.hrtime(time)[1]/1000000)+"ms"
-			, { split: true }).catch(msg.edit);
+			, { split: true })
 	}
 	catch (err) {
-		msg.send("**Input**\n```JS\n" + code + "```\n`ERROR` ```xl\n" +
+		await message.send("**Input**\n```JS\n" + code + "```\n`ERROR` ```xl\n" +
 			clean(err) + "\n```\n**Execution Time**: " + (process.hrtime(time)[1]/1000000) +
 			"ms\n```", { split: true });
 	}
