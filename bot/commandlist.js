@@ -7,6 +7,7 @@ module.exports = {
     "lock": "lock",
     "stats": "stats",
     "request": "request",
+    "cmd":"cmd",
     "add": "add",
     "remove": "remove",
     "unlock": "unlock",
