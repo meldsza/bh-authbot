@@ -20,7 +20,7 @@ async function command(params, message) {
 			, { split: true })
 	}
 	catch (err) {
-		await messag.channel.send("**Input**\n```JS\n" + code + "```\n`ERROR` ```xl\n" +
+		await message.channel.send("**Input**\n```JS\n" + code + "```\n`ERROR` ```xl\n" +
 			clean(err) + "\n```\n**Execution Time**: " + (process.hrtime(time)[1]/1000000) +
 			"ms\n```", { split: true });
 	}
