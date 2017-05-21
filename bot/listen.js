@@ -26,6 +26,7 @@ bot.on('message', (message) => {
             if (message.channel.guild)
                 return;//not DM
     }
+    if(message.author.bot) return;//no bots please
     /**
      * Listen to messages and convert into params
      */
