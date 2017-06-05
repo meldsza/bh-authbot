@@ -16,11 +16,11 @@ function startlog() {
     })
 
     pm2.stderr.on('data', (data) => {
-        bot.channels.get(logsCh).send(data, { code:'xl', split: true });
+        bot.channels.get(logsCh).send(data, { code:'xl', split: true }).catch(console.log);
     });
 
     pm2.stdout.on('data', (data) => {
-        bot.channels.get(logsCh).send( data, { code:'xl', split: true });
+        bot.channels.get(logsCh).send( data, { code:'xl', split: true }).catch(console.log);
     });
 
     return pm2;
@@ -28,5 +28,5 @@ function startlog() {
 bot.on('ready', () => {
     startlog();
     console.log("logs ready");
-    bot.channels.get(logsCh).send('Bot Ready (pid: ' + process.pid + ')');
+    bot.channels.get(logsCh).send('Bot Ready (pid: ' + process.pid + ')').catch(console.log);
 })
