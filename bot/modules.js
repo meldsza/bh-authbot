@@ -4,3 +4,4 @@
  */
 require('./modules/reactionNav');
 require('./modules/verify');
+require('./modules/logs');
