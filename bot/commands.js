@@ -15,7 +15,7 @@ getcommands();
 module.exports = {
     execute: function (cmd, params, message) {
         if (commands[cmd]) {
-            commands[cmd].execute(params, message).catch(err => message.channel.sendCode('error', err + "\n" + err.stack));
+            commands[cmd].execute(params, message).catch(err => message.channel.send(err + "\n" + err.stack, { code: 'error' }));
         }
         else if (cmd === 'help')
             help(message);
@@ -29,5 +29,5 @@ function help(message) {
             res = res + "**" + key + "** : " + value.description + "\n";
         }
     )
-    message.channel.sendMessage( res);
+    message.channel.send(res);
 }
