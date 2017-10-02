@@ -7,12 +7,13 @@ module.exports = {
     "lock": "lock",
     "stats": "stats",
     "request": "request",
-    "eval":"eval",
-    "cmd":"cmd",
+    "eval": "eval",
+    "cmd": "cmd",
     "add": "add",
     "remove": "remove",
     "unlock": "unlock",
     "kick": "kick",
     "ban": "ban",
-    "quote":"quote"
+    "quote": "quote",
+    "verify": "verify"
 }
