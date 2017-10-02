@@ -12,7 +12,6 @@ async function command(params, message) {
     let mem = await userbot.guilds.get(settings['discord-testers']).fetchMember(message.author.id);
     message.delete(500);
     if (mem && mem.roles.get('197042209038663680')) {
-        console.log(m.user.username + ' is a bug hunter');
         await verify(message);
     }
     else
