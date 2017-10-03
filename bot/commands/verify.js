@@ -10,7 +10,7 @@ const settings = require('./../../settings.json');
  */
 async function command(params, message) {
     let mem = await userbot.guilds.get(settings['discord-testers']).fetchMember(message.author.id);
-    message.delete(500);
+    setTimeout(message.delete,5000);
     if (mem && mem.roles.get('197042209038663680')) {
         await verify(message);
     }
